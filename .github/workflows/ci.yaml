@@ -41,7 +41,7 @@ jobs:
                 password: ${{ secrets.DOCKERHUB_TOKEN }}
 
             - name: Build Docker Image
-              run: docker build -t felipexx71/aula-docker-ci-api:latest .
+              run: docker build -t felipexx71/aula-docker-ci-api:latest
 
             - name: Push Docker Image to DockerHub
               run: docker push felipexx71/aula-docker-ci-api:latest          
