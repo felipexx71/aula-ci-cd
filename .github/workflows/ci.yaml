@@ -41,7 +41,7 @@ jobs:
                 password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
             - name: Build Docker Image
-              run: docker build -t felipelindo71/aula-devops-ifal:latest
+              run: docker build -t felipelindo71/aula-devops-ifal:latest .
 
             - name: Push Docker Image to DockerHub
               run: docker push felipelindo71/aula-devops-ifal:latest          
