@@ -37,15 +37,11 @@ jobs:
             - name: Login into the Container Registry
               uses: docker/login-action@v3
               with:
-                username: ${{ secrets.DOCKERHUB_USERNAME }}
+                username: ${{ secrets.DOCKERHUB_USER }}
                 password: ${{ secrets.DOCKERHUB_TOKEN }}
-            
-            - name: Build Docker Image
-              run: docker build -t aula-ci-cd:latest . 
 
-            - name: Login into the Container Registry
-              uses: docker/login-action@v3
-              with:
-                username: ${{ secrets.DOCKERHUB_USERNAME }}
-                password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          
+            - name: Build Docker Image
+              run: docker build -t felipexx71/aula-docker-ci-api:latest .
+
+            - name: Push Docker Image to DockerHub
+              run: docker push felipexx71/aula-docker-ci-api:latest          
